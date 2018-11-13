@@ -4,7 +4,7 @@ As well as concepts, ------------- think at scale!
 
 Spark
 ---------------------
-### 1. Optimization
+### 1. Code Optimization
 
 #### 1. avoid creating duplicate rdds
 
@@ -39,4 +39,8 @@ use reduceByKey and aggregateByKey rather than groupByKey (no combiners)
 
 #### 5. when serializtion, use kryo
 
-
+### 2. Parameter & cluster configuration Optimization
+#### 1.
+https://stackoverflow.com/questions/37871194/how-to-tune-spark-executor-number-cores-and-executor-memory
+http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-1/
+http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-2/
