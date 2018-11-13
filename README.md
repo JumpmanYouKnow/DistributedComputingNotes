@@ -44,3 +44,8 @@ use reduceByKey and aggregateByKey rather than groupByKey (no combiners)
 https://stackoverflow.com/questions/37871194/how-to-tune-spark-executor-number-cores-and-executor-memory
 http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-1/
 http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-2/
+
+MapReduce
+---------------------
+### 1. Downside
+https://homes.cs.washington.edu/~billhowe/mapreduce_a_major_step_backwards.html
