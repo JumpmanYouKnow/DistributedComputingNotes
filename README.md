@@ -10,13 +10,13 @@ Spark
 
 
 #### 2. avoid re-calcualtion, reuse same rdd as much as you can, 
-use cache() to prevent re calculation, (cache rdd in memory)
-use persist() to manually set different level of cache, 
-ex.StorageLevel.MEMORY_AND_DISK_SER
-others:
-MEMORY_ONLY
-MEMORY_AND_DISK
-MEMORY_ONLY_SER
+- use cache() to prevent re calculation, (cache rdd in memory)
+- use persist() to manually set different level of cache, 
+- ex.StorageLevel.MEMORY_AND_DISK_SER
+- others:
+MEMORY_ONLY\n
+MEMORY_AND_DISK\n
+MEMORY_ONLY_SER\n
 MEMORY_AND_DISK_SER: cache to memory first, if memory is not enough, write to disk
 DISK_ONLY
 MEMORY_ONLY_2
