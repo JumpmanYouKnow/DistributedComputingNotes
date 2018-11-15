@@ -13,27 +13,27 @@ Spark
 - use cache() to prevent re calculation, (cache rdd in memory)
 - use persist() to manually set different level of cache, 
 - ex.StorageLevel.MEMORY_AND_DISK_SER
-- others:
+- others:  
 MEMORY_ONLY  
 MEMORY_AND_DISK  
-MEMORY_ONLY_SER\n
-MEMORY_AND_DISK_SER: cache to memory first, if memory is not enough, write to disk
-DISK_ONLY
-MEMORY_ONLY_2
-MEMORY_AND_DISK_2
-
-_SER meaning seralize
-_2 make a replicate on other node
-choose Memory_only when avaiable, 
-disk_only and _2 are bad on performance, usually worse than re-calcualtion
+MEMORY_ONLY_SER  
+MEMORY_AND_DISK_SER: cache to memory first, if memory is not enough, write to disk  
+DISK_ONLY  
+MEMORY_ONLY_2  
+MEMORY_AND_DISK_2  
+  
+_SER meaning seralize  
+_2 make a replicate on other node  
+choose Memory_only when avaiable,   
+disk_only and _2 are bad on performance, usually worse than re-calcualtion  
 
 #### 3. avoid using shuffle
-ex. reduceByKey, join, distinct, repartition
+ex. reduceByKey, join, distinct, repartition  
 when rdd is small, consider using Broadcast+ map(similar to hash join)
 
 #### 4. using map-side join
-it has some prerequiste though, but performance is much better than reducer-side join
-use reduceByKey and aggregateByKey rather than groupByKey (no combiners)
+it has some prerequiste though, but performance is much better than reducer-side join  
+use reduceByKey and aggregateByKey rather than groupByKey (no combiners)  
 
 #### 4. broadcast variable when you need to
 
