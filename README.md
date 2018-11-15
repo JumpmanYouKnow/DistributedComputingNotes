@@ -45,6 +45,12 @@ https://stackoverflow.com/questions/37871194/how-to-tune-spark-executor-number-c
 http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-1/
 http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-2/
 
+###3. SparkSession and SparkContext
+For Spark 2.0+
+SparkSession is a combination of SQLContext, HiveContext, SparkContext and StreamingContext
+You can use SparkContext by directly initilaztion or use SparkSession.SparkContext
+
+
 MapReduce
 ---------------------
 ### 1. Downside
