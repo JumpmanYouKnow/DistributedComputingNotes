@@ -14,8 +14,8 @@ Spark
 - use persist() to manually set different level of cache, 
 - ex.StorageLevel.MEMORY_AND_DISK_SER
 - others:
-MEMORY_ONLY\n
-MEMORY_AND_DISK\n
+MEMORY_ONLY  
+MEMORY_AND_DISK  
 MEMORY_ONLY_SER\n
 MEMORY_AND_DISK_SER: cache to memory first, if memory is not enough, write to disk
 DISK_ONLY
