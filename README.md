@@ -48,7 +48,7 @@ http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-2/
 #### 3. SparkSession and SparkContext
 For Spark 2.0+  
 SparkSession is a combination of SQLContext, HiveContext, SparkContext and StreamingContext  
-You can use SparkContext by directly initilaztion or use SparkSession.SparkContext  
+You can use SparkContext by directly initilaztion or use SparkSession.sparkContext  (lower case s captial C)
 
 
 MapReduce
