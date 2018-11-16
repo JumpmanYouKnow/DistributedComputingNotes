@@ -45,11 +45,24 @@ https://stackoverflow.com/questions/37871194/how-to-tune-spark-executor-number-c
 http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-1/
 http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-2/
 
-#### 3. SparkSession and SparkContext
+### 3. SparkSession and SparkContext
 For Spark 2.0+  
 SparkSession is a combination of SQLContext, HiveContext, SparkContext and StreamingContext  
 You can use SparkContext by directly initilaztion or use SparkSession.sparkContext  (lower case s captial C)
 
+
+### 4.spark get single output file
+
+When working with a larger dataset:  
+
+rdd.collect() should not be used in this case as it will collect all data as an Array in the driver, which is the easiest way to get out of memory.  
+
+rdd.coalesce(1).saveAsTextFile() should also not be used as the parallelism of upstream stages will be lost to be performed on a single node, where data will be stored from.  
+
+rdd.coalesce(1, shuffle = true).saveAsTextFile() is the best simple option as it will keep the processing of upstream tasks parallel and then only perform the shuffle to one node (rdd.repartition(1).saveAsTextFile() is an exact synonym).  
+
+rdd.saveAsSingleTextFile() as provided bellow additionally allows one to store the rdd in a single file with a specific name while keeping the parallelism properties of rdd.coalesce(1, shuffle = true).saveAsTextFile().
+https://stackoverflow.com/questions/24371259/how-to-make-saveastextfile-not-split-output-into-multiple-file
 
 MapReduce
 ---------------------
